@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+
+Template 2092 Shelf
+
+http://www.tooplate.com/view/2092-shelf
+
+-->
+    <title>MORe</title>
+
+    <!-- load stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">                <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">                                      <!-- Bootstrap style -->
+    <link rel="stylesheet" href="css/tooplate-style.css">                                     <!-- Templatemo style -->
+    <style>
+        .sticky {
+            top: 0;
+            z-index:100;
+          }
+          .navbar-color {
+            background-color: #7f7f7f
+          }
+    </style>
+</head>
+
+    <body>
+        
+        <div class="container">
+            <header class="tm-site-header">
+                <h1 class="tm-site-name">Self-Supervised Mesh Object Retrieval</h1>
+                <p class="tm-site-description">Supplementary Material</p>
+            </header>
+        </div>
+        <div id ="myHeader" class="container navbar">
+            <nav class="navbar navbar-expand-md tm-main-nav-container navb">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#tmMainNav" aria-controls="tmMainNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-bars"></i>
+                </button>
+
+                <div class="collapse navbar-collapse tm-main-nav" id="tmMainNav">
+                    <ul class="nav nav-fill tm-main-nav-ul">
+                        <li class="nav-item"><a class="nav-link" href="#method">Method</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#confusion-matrix">Confusion Matrix</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#tsne">tSNE</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#results">Results</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#insights">Insights</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="container" id="abstract">
+            <div class="tm-main-content">
+                <section class="tm-margin-b-l">
+                    <header>
+                        <h2 class="tm-main-title">Contents</h2>    
+                    </header>
+                    <ul>
+                        <li><a href="#method">Method</a></li>
+                        <li><a href="#confusion-matrix">Interactive Confusion Matrix</a></li>
+                        <li><a href="#tsne">Interactive tSNE Scatter Plot</a></li>
+                        <li><a href="#results">Additional Results</a></li>
+                        <li><a href="#insights">Insights on selected Results</a></li>
+                    </ul>
+                    <p><center>Teaser Image: Top-10 Retrieved Objects</center></p>
+                    <div class="tm-gallery">
+                        <div class="row">
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/desk_0246.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/bowl_0070.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                    <p>We present additional results and additional illustrations to bring out the strength of our 
+                        Mesh Object Retrieval method in this supplementary submission. Please scroll down to see those
+                         results or use the links above to jump to separate sections.</p>
+                    
+                </section>
+            </div>
+        </div>
+        <div class="container" id="method">
+            <div class="tm-main-content">
+                <section class="tm-margin-b-l">
+                    <header>
+                        <h2 class="tm-main-title">Method</h2>
+                    </header>
+                    <div class="tm-gallery">
+                        <figure class="col-12">
+                            <img src="img/pipeline.jpg" alt="Image" class="img-fluid tm-img-center">
+                        </figure>
+                    </div>
+                    <br>
+                    <br>
+                    <figure class="col-lg-12 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                        <p><center>Dataset and class distribution of the objects taken from ModelNet40. 
+                            Our system is trained in a self-supervised manner and does not use the labels.    
+                        </center></p>
+                        <div>
+                            <img src="img/dataset_distribution.png" width=1000 height=1000 class="img-fluid tm-img-center">
+                        </div>
+                    </figure>
+                    
+                </section>
+            </div>
+        </div>
+        <div class="container" id="confusion-matrix">
+            <div class="tm-main-content">
+                <section class="tm-margin-b-l">
+                    <header>
+                        <h2 class="tm-main-title">Interactive Confusion Matrix Instructions and Details</h2>    
+                    </header>
+                        <ul>
+                            <li>Hovering on the individual elements of the matrix shows its actual and predicted classes and the average values across all the objects of that type.</li>
+                            <!-- <li>Actual value is denoted by 'y', predicted value by 'x' and the color denotes the average value.</li> -->
+                            <ul>
+                                <li>"x": The Predicted Class</li>
+                                <li>"y": The Actual Class</li>
+                                <li>"color": The average value of all the elements with the given actual and predicted class.</li>
+                            </ul>
+                            <li>Hover over the buttons on the top right to know their functions.</li>
+                        </ul>
+                        <div class="tm-gallery">
+                            <p><center>Interactive version of the Confusion Matrix shown in Figure 7 in the main paper. It is the confusion matrix with queries from the test dataset of ModelNet40 queried over the train dataset of ModelNet40.</center></p>
+                            <figure class="col-12">
+                                <iframe src="html/test_on_train.html" height="1000" width="1000" title="Confusion Matrix"></iframe>
+                            </figure>
+                        </div>
+                        <div class="tm-gallery">
+                            <p><center>Interactive version of the Confusion Matrix with queries from the test dataset of ModelNet40 queried over itself.</center></p>
+                            <figure class="col-12">
+                                <iframe src="html/test_on_test.html" height="1000" width="1000" title="Confusion Matrix"></iframe>
+                            </figure>
+                        </div>
+                        <div class="tm-gallery">
+                            <p><center>Interactive version of the Confusion Matrix with queries from the test dataset of ModelNet40 queried over the entire ModelNet40 dataset.</center></p>
+                            <figure class="col-12">
+                                <iframe src="html/test_on_all.html" height="1000" width="1000" title="Confusion Matrix"></iframe>
+                            </figure>
+                        </div>
+                </section>
+            </div>
+        </div>
+        <div class="container" id="tsne">
+            <div class="tm-main-content">
+                <section class="tm-margin-b-l">
+                    <header>
+                        <h2 class="tm-main-title">Interactive Exploration of tSNE: Instructions and Details</h2>    
+                    </header>
+                    <ul>
+                        <li>Hovering on individual elements in the scatter plot show details of individual models in the new 2D tSNE space.</li>
+                        <ul>
+                            <li>"l": Class of the specified object.</li>
+                            <li>"x": x-coordinate for tSNE plot of the element.</li>
+                            <li>"y": y-coordinate for tSNE plot of the element.</li>
+                            <li>"f": Name of the element in the ModelNet40 dataset.</li>
+                        </ul>
+                        <li>Single click on any active class in the right panel removes that class from the current view.</li>
+                        <li>Double click on any class shows only that class in the current view.</li>
+                        <li>Single click on any inactive class adds that class to the current view.</li>
+                        <li>To reset the view to "All classes active", double click in the background of the right panel.</li>
+                        <li>Hover over the buttons on the top right to know their functions.</li>
+                    </ul>
+                    <div class="tm-gallery">
+                        <p><center>Interactive version of the tSNE visualization shown in Figure 6 in the main paper.
+                            It shows the 2D tSNE visualization of the embeddings of all the models taken from ModelNet40.
+                            </center></p>
+                        <figure class="col-12">
+                            <iframe src="html/train_test_modelnet.html" height="800" width="1000" title="tSNE"></iframe>
+                        </figure>
+                    </div>
+                        
+                </section>
+            </div>
+        </div>
+        <div class="container" id="results">
+            <div class="tm-main-content">
+                <section class="tm-margin-b-l">
+                    <header>
+                        <h2 class="tm-main-title">Additional Results</h2>    
+                    </header>
+                    <p>In the following results, the top object denotes the query and the other are the top-10 ranked results.</p>
+                    <br><br>
+                    <h4 class="tm-main-title"><center>ModelNet40</center></h4>
+                    <div class="tm-gallery">
+                        <div class="row">
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/results/airplane_0665.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/results/bed_0545.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/results/bookshelf_0658.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/results/car_0210.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/results/chair_0913.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/results/desk_0211.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/results/desk_0216.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/results/dresser_0206.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/results/flower_pot_0155.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/results/glass_box_0198.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/results/guitar_0173.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/results/mantel_0312.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/results/night_stand_0208.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/results/piano_0280.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/results/plant_0275.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/results/table_0419.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/results/toilet_0359.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/results/vase_0492.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/results/vase_0503.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                            
+                        </div>
+                    </div>
+                    <h4 class="tm-main-title"><center>ShapeNet</center></h4>
+                    <p align="justify">Queries from Shapenet with the database of the same set of objects from Shapenet using the 
+                        same model trained on train dataset of ModelNet40. This shows our model works quite well on dataset 
+                        it was not trained on and our embedding captures the essential characteristics of the underlaying shape.
+                    </p>
+                    <div class="tm-gallery">
+                        <div class="row">
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/shapenet/bathtub_0763.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure><figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/shapenet/bench_0007.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure><figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/shapenet/bottle_0242.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure><figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/shapenet/bowl_0054.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure><figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/shapenet/chair_0207.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure><figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/shapenet/flowerpot_0140.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure><figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/shapenet/jar_0033.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure><figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/shapenet/jar_0126.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure><figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/shapenet/sofa_0176.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure><figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/shapenet/sofa_0444.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure><figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/shapenet/table_1373.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/shapenet/table_1614.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="container" id="insights">
+            <div class="tm-main-content">
+                <section class="tm-margin-b-l">
+                    <header>
+                        <h2 class="tm-main-title">Insights</h2>    
+                    </header>
+                    
+                    <p>Focuses on the shape of the object and gives objects with similar shapes that may not be of the same class.</p>
+                    
+                    <div class="tm-gallery">
+                        <div class="row">
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <p><center>The bottle queried gives vase with a slim and tall structure.</center></p>
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/insights/bottle_0353.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <p><center>Cone has less objects of the same in the dataset and thus gives conical slim objects.</center></p>
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/insights/cone_0184.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <p><center>Flower pot matches with a plant due to the leaves, lamp due to lamp's thin stand matching flower pot's stem.</center></p>
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/insights/flower_pot_0156.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <p><center>Keyboard matches with the keyboard part of a laptop and a tv stand due to thin long rectangular structure.</center></p>
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/insights/keyboard_0153.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <p><center>The lamp gives objects with similar shapes like vase, bottle and flower pot.</center></p>
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/insights/lamp_0142.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <p><center>The range hood matches with monitor and tv stand with similar trapezium shape.</center></p>
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/insights/range_hood_0136.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                            <figure class="col-lg-6 col-md-6 col-sm-12 col-12 tm-gallery-item">
+                                <p><center>Sofa with "L" shape matches desks and tables with similar "L" shapes.</center></p>
+                                <div class="tm-gallery-item-overlay">
+                                    <video src="videos/insights/sofa_0734.webm" autoplay loop controls class="img-fluid tm-img-center">
+                                </div>
+                            </figure>
+                             
+                        </div>
+                         
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- load JS files -->
+        <script src="js/jquery-1.11.3.min.js"></script>         <!-- jQuery (https://jquery.com/download/) -->
+        <script src="js/popper.min.js"></script>                <!-- Popper (https://popper.js.org/) -->
+        <script src="js/bootstrap.min.js"></script>             <!-- Bootstrap (https://getbootstrap.com/) -->
+        <script>
+            window.onscroll = function() {myFunction()};
+
+            var header = document.getElementById("myHeader");
+            var sticky = header.offsetTop;
+
+            function myFunction() {
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+            }
+        </script>
+    </body>
+</html>
