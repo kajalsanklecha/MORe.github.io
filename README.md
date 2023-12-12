@@ -1,8 +1,8 @@
-# 26 - Self-Supervised Mesh Object Retrieval
+# Self-Supervised Mesh Object Retrieval
 Supplementary Material
 
 ## Getting Started
-Open the "MORe.html" file in any browser and have a walk-through of supplementary material for ICVGIP'23 ID-26.
+Open the "MORe.html" file in any browser and have a walk-through of supplementary material for ICVGIP'23.
 
 ### Method
 Diagram of the method proposed.
