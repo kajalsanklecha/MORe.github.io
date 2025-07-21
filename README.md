@@ -1,4 +1,4 @@
-# Self-Supervised Mesh Object Retrieval
+# MORe: Self-Supervised Mesh Object Retrieval
 Supplementary Material
 
 ## Getting Started
